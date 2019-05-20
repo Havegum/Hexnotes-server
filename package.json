@@ -1,0 +1,21 @@
+{
+  "name": "hexnotes-server",
+  "version": "0.0.1",
+  "description": "Backend utilities for Hexnotes",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node .\\node_modules\\nodemon\\bin\\nodemon.js src\\app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Halvard Vegum",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.0",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
