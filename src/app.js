@@ -4,23 +4,25 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const morgan = require('morgan')
 
-const network = require('../assets/network.json')
+let network = require('../assets/network.json') // TODO: Fetch this from database
 
 const app = express()
 app.use(morgan('combined'))
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/posts', (req, res) => {
-  res.send(
-    [{
-      title: "Hello World!",
-      description: "This is another test sending description!"
-    }]
-  )
+app.get('/network', (req, res) => {
+  res.send(network)
 })
 
-app.get('/network', (req, res) => {
+app.get('/network/links', (req, res) => { res.send(network.links) })
+app.get('/network/nodes', (req, res) => { res.send(network.nodes) })
+
+app.post('/network/person', (req, res) => {
+  let person = req.body
+
+  let i = network.nodes.findIndex(d => d.id === person.id)
+  network.nodes[i] = person
   res.send(network)
 })
 
