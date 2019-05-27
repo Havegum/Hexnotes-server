@@ -1,26 +1,30 @@
 {
   "nodes": [
-    {"id": "The Party", "isParty":true, "color": "#8E43AD", "group": 0, "size": 8, "description": "This is a general description of the party."},
+    {"id": "The Party", "isParty": true, "color": "#8E43AD", "group": 0, "size": 8, "description": "This is a general description of the party."},
 
-    {"id": "Liniel", "group": 1, "size": 4,
+    {"id": "Liniel", "inParty": true, "faction": "Party", "size": 4,
       "data": { "race": "Moon Elf", "age": 46 },
       "description": "Fleeing Weadren so as to not face the consequences of his actions, Liniel found his way to a brave new world and new adventures."},
-    {"id": "Rant", "group": 1, "size": 4},
-    {"id": "Tsadok", "group": 1, "size": 4},
-    {"id": "Murgen", "group": 1, "size": 4},
-    {"id": "Aoth", "group": 1, "size": 4},
+    {"id": "Rant", "inParty": true, "faction":"Party", "size": 4},
+    {"id": "Tsadok", "inParty": true, "faction": "Party", "size": 4},
+    {"id": "Murgen", "inParty": true, "faction": "Party", "size": 4},
+    {"id": "Aoth", "inParty": true, "faction": "Party", "size": 4},
 
-    {"id": "10 000 Fallen Leaves", "group": 2, "size": 4},
-    {"id": "Grigori", "group": 2, "size": 1},
-    {"id": "Tamali", "group": 2, "size": 1},
-    {"id": "Talfon Drumwind", "group": 2, "size": 2},
-    {"id": "Missing Merchant Caravan", "group": 2, "size": 1},
-    {"id": "The Gorgon – Hadeel Kel-Vadrian", "group": 2, "size": 4},
-    {"id": "Sydry", "group": 2, "size": 3},
-    {"id": "Caleryn Greenleaf", "group": 2, "size": 2},
-    {"id": "\"Lorax\" – The Pale Gnome King", "group": 2, "size": 4},
-    {"id": "Tel'Kezir", "group": 2, "size": 2},
-    {"id": "The Devil", "group": 2, "size": 4}
+    {"id": "10 000 Fallen Leaves", "group": "Thornwall", "size": 4},
+    {"id": "The King of Thornwall", "group": "Thornwall", "size": 4},
+    {"id": "The Queen of Thornwall", "group": "Thornwall", "size": 4},
+    {"id": "The Knight of Thornwall", "group": "Thornwall", "size": 4},
+    {"id": "Rajeem", "group": "Thornwall", "size": 2},
+    {"id": "Grigori", "group": null, "size": 1},
+    {"id": "Tamali", "group": "The Gorgon", "size": 1},
+    {"id": "Talfon Drumwind", "group": null, "size": 2},
+    {"id": "Missing Merchant Caravan", "group": null, "size": 1},
+    {"id": "The Gorgon – Hadeel Kel-Vadrian", "group": "The Gorgon", "size": 4},
+    {"id": "Sydry", "group": "The Gorgon", "size": 3},
+    {"id": "Caleryn Greenleaf", "group": null, "size": 2},
+    {"id": "\"Lorax\" – The Pale Gnome King", "group": null, "size": 4},
+    {"id": "Tel'Kezir", "description": "... Also known as \"Acolyte Sang\"", "group": "Grasping Hands", "size": 2},
+    {"id": "The Devil", "group": "Grasping Hands", "size": 4}
   ],
   "links": [
     {"source": "The Party", "target": "10 000 Fallen Leaves", "type": 1, "value": 2},
@@ -33,15 +37,26 @@
     {"source": "The Party", "target": "Caleryn Greenleaf", "type": 1, "value": 1},
     {"source": "Caleryn Greenleaf", "target": "\"Lorax\" – The Pale Gnome King", "type": -2, "value": 3},
     {"source": "The Party", "target": "Sydry", "type": 0, "value": 2},
-    {"source": "Sydry", "target": "The Gorgon – Hadeel Kel-Vadrian", "type": 0, "value": 2},
+    {"source": "Sydry", "target": "The Gorgon – Hadeel Kel-Vadrian", "type": 0, "value": 1},
+
+    {"source": "Rajeem", "target": "10 000 Fallen Leaves", "type": 2, "value": 2},
+    {"source": "Rajeem", "target": "The Party", "type": 0, "value": 2},
 
     {"source": "The Party", "target": "Tel'Kezir", "type": -2, "value": 1},
     {"source": "The Party", "target": "The Devil", "type": -2, "value": 2},
     {"source": "Tel'Kezir", "target": "The Devil", "type": 1, "value": 3},
 
     {"source": "10 000 Fallen Leaves", "target": "Sydry", "type":-1, "value": 1},
-
     {"source": "10 000 Fallen Leaves", "target": "The Devil", "value": 1},
+
+    {"source": "10 000 Fallen Leaves", "target": "The King of Thornwall",  "type":2, "value": 3},
+    {"source": "10 000 Fallen Leaves", "target": "The Queen of Thornwall", "type":2, "value": 3},
+    {"source": "10 000 Fallen Leaves", "target": "The Knight of Thornwall", "type":2, "value": 3},
+    {"source": "The King of Thornwall", "target": "The Queen of Thornwall", "type":2, "value": 3},
+    {"source": "The King of Thornwall", "target": "The Knight of Thornwall", "type":2, "value": 3},
+    {"source": "The Queen of Thornwall", "target": "The Knight of Thornwall", "type":2, "value": 3},
+
+    {"source": "The Party", "target": "The King of Thornwall", "type":1, "value": 0},
 
     {"source": "Grigori", "target": "Tamali", "value": 0},
     {"source": "Grigori", "target": "Talfon Drumwind", "value": 0},
